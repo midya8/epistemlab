@@ -35,6 +35,18 @@ class DisclosureTests(unittest.TestCase):
                     kept=[w for w in a['request']['worlds'] if any(all((p in a['request']['valuation'][w])==bit for p,bit in zip(a['request']['atoms'],cube)) for cube in r['dnf_cubes'])]
                     self.assertEqual(kept,r['retained'])
 
+    def test_maximality_checks_all_supersets_not_only_one_bit(self):
+        p,q=['atom','p'],['atom','q']
+        kp,kq=['K','a',p],['K','a',q]
+        goal=['or',['and',kp,kq],['and',['not',kp],['not',kq]]]
+        r=dict(worlds=['w0','w1','w2'],atoms=['p','q'],valuation={'w0':['p','q'],'w1':['p'],'w2':['q']},partitions={'a':[['w0','w1','w2']]},focus='w0',queries=[goal],announcements=[])
+        report=atlas(r)
+        self.assertEqual(report,reconstruct(r))
+        self.assertEqual(report['goals'][0]['successes'],[1,7])
+        self.assertEqual(report['goals'][0]['maximal'],[7])
+        self.assertEqual(report['records'][3]['values'],[False])
+        self.assertEqual(report['records'][5]['values'],[False])
+
     def test_all_200_small_atlases_and_boolean_function_completeness(self):
         worlds=['w0','w1','w2'];ps=partitions(worlds);p=['atom','p'];count=0
         for a,b in itertools.product(ps,repeat=2):
