@@ -8,6 +8,20 @@ announcement restriction. A separate checker reconstructs the complete report.
 The browser computes these experiments locally after the static assets load. No model, backend, or paid API is called.
 No model API, training, private data or inferred human knowledge.
 
+## Boolean disclosure atlas
+
+The separate [live disclosure atlas](https://midya8.github.io/epistemlab/disclosures.html) enumerates every world restriction for up to eight worlds, but counts only focus-truthful Boolean-definable announcements as solutions. Equal-valuation worlds cannot be separated by any Boolean formula over the supplied atoms. Actual obstruction pairs and canonical defining DNF cubes expose the distinction.
+
+The default control has two inclusion-maximal solutions retaining two and three worlds; only the latter is maximum-retained. Another has two diagnostic successes but no Boolean solution. More disclosure can destroy an ignorance goal. These are exact supplied-model results, not minimum formula size, information leakage, general planning or APAL/BAPAL logic. See [DISCLOSURES.md](DISCLOSURES.md) for the separate schema and contract.
+
+For a runnable example, save one control request first:
+
+```sh
+python -c "import json;json.dump(json.load(open('docs/disclosure-controls.json'))[0]['request'],open('disclosure-request.json','w'))"
+epistemlab disclosures disclosure-request.json > atlas.json
+epistemlab verify-disclosures atlas.json
+```
+
 ## Contrasts that separate the claims
 
 - `p AND NOT K[a]p` is true at the focus before it is publicly announced. The
@@ -39,7 +53,7 @@ python -m epistemlab analyze docs/example.json > evidence.json
 python -m epistemlab verify evidence.json
 epistemlab verify evidence.json
 python -m unittest discover -s tests -v
-node --test tests/test_engine.mjs tests/test_browser.cjs
+node --test tests/test_*.mjs tests/test_*.cjs
 bash tools/check_wheel.sh
 python -m http.server --directory docs 8000
 ```
@@ -85,3 +99,5 @@ lost-truth witnesses do not classify a formula across every possible model.
 Established epistemic/public-announcement logic and standard graph/fixed-point
 methods, not a new algorithm. See [CONTRACT.md](CONTRACT.md) and
 [SOURCES.md](SOURCES.md).
+
+Disclosure reproduction adds six Python tests (13 total), three Node semantic tests and actual-Chrome atlas checks (eight Node/Chrome tests total). All 200 small models are complete atlases (1,600 restriction records), with all Boolean truth functions of one atom checked independently; 45 seeded nested-goal atlases; eight developed controls/324 masks; every defining cube, obstruction, frontier and non-monotone witness; and installed 0.2.0 wheel execution through both command entry points for both control families. Actual atlas Chrome checks 24 responsive reports, 972 mask selections, 75 goal selections, 204 frontier/witness buttons, 2,596 subformula selections, 1,170 modal obligations, 87 world toggles and eight exports. Existing sequential-update checks remain included.
