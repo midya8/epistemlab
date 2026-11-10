@@ -191,7 +191,7 @@ function render(r) {
       [r.subformula_count, "Distinct subformulas"],
       [
         r.updates.reduce((n, u) => n + u.lost_truth.length, 0),
-        "Retained worlds losing announcement truth",
+        "World-update truth-loss occurrences",
       ],
     ].map(([n, label]) => {
       const d = el("div", undefined, "stat");
