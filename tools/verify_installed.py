@@ -37,3 +37,17 @@ for i, c in enumerate(cs):
 print(
     "Installed wheel outside checkout: eight controls, module/console parity, independent verification, forged-evidence rejection"
 )
+from epistemlab.disclosures import atlas
+from epistemlab.disclosure_oracle import verify_atlas
+cs = json.loads(pathlib.Path(sys.argv[2]).read_text())
+for i,c in enumerate(cs):
+    request=pathlib.Path(f'disclosure-request-{i}.json');request.write_text(json.dumps(c['request']))
+    reports=[json.loads(subprocess.check_output(cmd+['disclosures',str(request)],text=True)) for cmd in [[sys.executable,'-m','epistemlab'],['epistemlab']]]
+    assert reports[0]==reports[1]==atlas(c['request']) and verify_atlas(reports[0])
+    evidence=pathlib.Path(f'disclosure-evidence-{i}.json');evidence.write_text(json.dumps(reports[0]))
+    for cmd in [[sys.executable,'-m','epistemlab'],['epistemlab']]:
+        p=subprocess.run(cmd+['verify-disclosures',str(evidence)],text=True,capture_output=True);assert p.returncode==0 and p.stdout.strip()=='Evidence accepted'
+    forged=copy.deepcopy(reports[0]);forged['records'][0]['values'][0]=False;evidence.write_text(json.dumps(forged))
+    for cmd in [[sys.executable,'-m','epistemlab'],['epistemlab']]:
+        p=subprocess.run(cmd+['verify-disclosures',str(evidence)],text=True,capture_output=True);assert p.returncode==2 and 'Evidence rejected' in p.stderr
+print('Installed disclosure atlas: eight controls/324 masks, module/console parity, independent verification, forged-null rejection')
