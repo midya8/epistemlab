@@ -8,4 +8,4 @@ python -m venv "$tmp/venv"
 "$tmp/venv/bin/python" -m pip install --no-deps "$tmp"/dist/*.whl
 export PATH="$tmp/venv/bin:$PATH"
 cd "$tmp"
-python "$root/tools/verify_installed.py" "$root/docs/controls.json"
+python "$root/tools/verify_installed.py" "$root/docs/controls.json" "$root/docs/disclosure-controls.json"
