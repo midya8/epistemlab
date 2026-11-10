@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EpistemLab - which event did they see?</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="events.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="./">EPISTEMLAB / KNOWLEDGE</a
+        ><a href="https://github.com/midya8/epistemlab/blob/main/EVENTS.md"
+          >METHOD &amp; SOURCES ↗</a
+        >
+      </header>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">S5 EVENT MODELS / EXACT PRODUCT UPDATE</p>
+          <h1>The fact stays.<br />Who saw it changes.</h1>
+          <p class="intro">
+            A receiver can learn p without everyone learning that the receiver
+            learned. Keep uncertainty about the world separate from uncertainty
+            about the event.
+          </p>
+          <p>
+            One supplied action. Up to four worlds, three events and twelve
+            retained pairs. Explicit finite knowledge, not a claim about a real
+            mind or AI.
+          </p>
+        </div>
+        <aside>
+          <p class="eyebrow">A READ MAY HAVE BEEN SKIPPED</p>
+          <h2>read p / read ¬p / idle</h2>
+          <p>
+            The receiver distinguishes the events. An observer does not. Even
+            when p was read, an idle copy can keep the observer uncertain about
+            what the receiver learned.
+          </p>
+          <strong>A product update is not a public announcement.</strong>
+        </aside>
+      </section>
+      <section>
+        <p class="eyebrow">01 / THE SUPPLIED ACTION</p>
+        <h2>Two kinds of uncertainty.</h2>
+        <label for="control">Original synthetic control</label
+        ><select id="control"></select>
+        <p id="note"></p>
+        <details>
+          <summary>Edit the complete model and action</summary>
+          <label for="request">Strict JSON request</label
+          ><textarea id="request" spellcheck="false"></textarea
+          ><button id="run">Recompute exact evidence</button>
+        </details>
+        <p id="status" role="status"></p>
+        <p id="error" role="alert"></p>
+      </section>
+      <div id="results" hidden>
+        <section>
+          <p class="eyebrow">02 / NOT THE SAME COMMUNICATION</p>
+          <h2>What changes at the pointed pair?</h2>
+          <div id="summary" class="cards"></div>
+          <div class="scroll"><table id="comparison"></table></div>
+          <p class="hint">
+            The last column is a different action: publicly announce only the
+            actual event's precondition. It is a diagnostic contrast, never the
+            product result. An impossible designated event has null post-event
+            focus values, even when other pairs exist.
+          </p>
+          <div class="three">
+            <div>
+              <h3>World partitions / before</h3>
+              <div id="world-parts"></div>
+            </div>
+            <div>
+              <h3>Event partitions / action</h3>
+              <div id="event-parts"></div>
+            </div>
+            <div>
+              <h3>Product partitions / after</h3>
+              <div id="product-parts"></div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <p class="eyebrow">03 / PRECONDITIONS ARE TESTED BEFORE</p>
+          <h2>Keep the pair, not just the world.</h2>
+          <p>
+            Every world/event candidate is shown. The selected actual event does
+            not delete alternative events from the model. Equal valuations or
+            preconditions do not merge event copies.
+          </p>
+          <div id="product-grid" class="scroll"></div>
+          <p class="hint">
+            Green outline: actual pair. Blue fill: selected source. Orange
+            inset: selected target. Gray dashed cells fail their precondition.
+            On small screens, scroll inside the grid and tables to see every
+            column. Select a retained cell to inspect its source relations.
+          </p>
+          <div class="scroll"><table id="candidates"></table></div>
+          <div class="scroll"><table id="preconditions"></table></div>
+        </section>
+        <section>
+          <p class="eyebrow">04 / TWO OBLIGATIONS FOR EACH ARROW</p>
+          <h2>Related in the world. And in the event.</h2>
+          <div class="three">
+            <div>
+              <label for="agent">Agent</label
+              ><select id="agent"></select>
+            </div>
+            <div>
+              <label for="source">Source product pair</label
+              ><select id="source"></select>
+            </div>
+            <div>
+              <label for="target">Target product pair</label
+              ><select id="target"></select>
+            </div>
+          </div>
+          <div id="edge-proof" class="cards"></div>
+          <div id="view-proof" class="cards"></div>
+          <div class="scroll"><table id="edges"></table></div>
+          <p class="hint">
+            All ordered targets, including self, are retained in this table. The
+            arrow exists exactly when both component relations hold. World
+            knowledge and preconditions can rule out events even when the event
+            partition alone cannot.
+          </p>
+        </section>
+        <section>
+          <p class="eyebrow">05 / EVERY SUBFORMULA AND MODAL OBLIGATION</p>
+          <h2>Replay what is known.</h2>
+          <div class="two">
+            <div>
+              <label for="snapshot">Model to inspect</label
+              ><select id="snapshot">
+                <option value="before">Before / original worlds</option>
+                <option value="after">After / product pairs</option>
+                <option value="public">
+                  Counterfactual public restriction
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="formula">Subformula</label
+              ><select id="formula"></select>
+            </div>
+          </div>
+          <p id="truth"></p>
+          <div class="scroll"><table id="changes"></table></div>
+          <label for="world">Modal obligation at world / pair</label
+          ><select id="world"></select>
+          <div id="modal-proof"></div>
+          <div class="scroll"><table id="paths"></table></div>
+          <p class="hint">
+            C uses all finite paths through the group's union relation,
+            including the current world. D uses intersection, which models
+            hypothetical pooling, not an actual message. Full names and complete
+            paths stay in the report.
+          </p>
+        </section>
+        <section>
+          <p class="eyebrow">06 / TAKE THE WHOLE EXPERIMENT</p>
+          <h2>Export the obligations, not a verdict alone.</h2>
+          <button id="download">Download complete event evidence</button>
+          <p>
+            The browser computes locally. Independent checking happens only when
+            the native checker accepts the complete exported report.
+          </p>
+          <pre>
+epistemlab-events request.json --output event.json
+epistemlab-events event.json --verify</pre>
+          <details>
+            <summary>Complete current certificate</summary>
+            <pre id="certificate"></pre>
+          </details>
+        </section>
+      </div>
+      <section class="method">
+        <p class="eyebrow">METHOD / SMALL, FACTUAL, QUALIFIED</p>
+        <h2>Uncertain is not mistaken.</h2>
+        <p>
+          Both world and event relations are supplied S5 equivalence partitions.
+          The product intersects the component relations on
+          precondition-satisfying pairs; atomic valuations are inherited from
+          the original world. This preserves S5 on every nonempty product. The
+          designated pair must separately exist for an executable pointed
+          update.
+        </p>
+        <p>
+          This can represent an observed read or uncertainty about whether a
+          read happened. It does not represent a fully unnoticed secret where an
+          outsider falsely rules out the actual event. That requires a
+          different, non-S5 event relation. No postconditions, factual change,
+          probabilities, belief revision, action composition, nested dynamic
+          operators, event synthesis or planning are implemented.
+        </p>
+        <p>
+          The generator crosses partition blocks and reuses the existing
+          pointwise knowledge engine. A separate checker reconstructs the full
+          product from component relation tests and row classes, then uses the
+          existing independent truth-set/Floyd oracle. The browser uses
+          union-find on the pair relation and its separately written modal
+          engine. Shared schema and written semantics are disclosed. Optional
+          actual pyModelChecking compares the reconstructed modal truth sets
+          using ordinary CTL AX/AG; it is not an independent event parser or a
+          proof.
+        </p>
+        <p>
+          Established dynamic epistemic logic, original bounded implementation
+          and fixtures. Not new theory, a scalable symbolic solver, private
+          data, inferred human beliefs or a guarantee about real agents.
+        </p>
+        <p>
+          <a href="https://github.com/midya8/epistemlab"
+            >Source and reproduction</a
+          >
+          ·
+          <a href="https://github.com/midya8/epistemlab/blob/main/EVENTS.md"
+            >Contract, derivation and inspected sources</a
+          >
+          · <a href="disclosures.html">Boolean disclosure atlas</a>
+        </p>
+      </section>
+    </main>
+    <script type="module" src="events-app.js"></script>
+  </body>
+</html>

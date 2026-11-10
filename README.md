@@ -101,3 +101,21 @@ methods, not a new algorithm. See [CONTRACT.md](CONTRACT.md) and
 [SOURCES.md](SOURCES.md).
 
 Disclosure reproduction adds seven Python tests (14 total), four Node semantic tests and actual-Chrome atlas checks (nine Node/Chrome tests total). All 200 small models are complete atlases (1,600 restriction records), with all Boolean truth functions of one atom checked independently; 45 seeded nested-goal atlases; eight developed controls/324 masks; every defining cube, obstruction, frontier and non-monotone witness; and installed 0.2.0 wheel execution through both command entry points for both control families. Actual atlas Chrome checks 24 responsive reports, 972 mask selections, 75 goal selections, 204 frontier/witness buttons, 2,596 subformula selections, 1,170 modal obligations, 87 world toggles and eight exports. Existing sequential-update checks remain included.
+
+## S5 event-model product updates
+
+The limits above describe the original sequential/public-disclosure inspectors. A separate [event update inspector](https://midya8.github.io/epistemlab/events.html) now distinguishes uncertainty about a world from uncertainty about which informational event occurred. In the original read/may-idle control, the receiver learns p while the observer does not know whether the receiver learned. Treating the event as public would incorrectly make that nested knowledge and common knowledge of p true.
+
+Inspect every world/event candidate, precondition result, inherited valuation, product partition, both component conditions for every arrow, projected event/world possibilities, complete static modal atlas and separately labeled public-announcement counterfactual. Equal preconditions do not merge event copies. A nonempty global product need not contain the designated point; its post-event focus values are null rather than false or vacuous.
+
+```sh
+python -m epistemlab.event_cli event-request.json --output event.json
+python -m epistemlab.event_cli event.json --verify
+# Installed: epistemlab-events
+```
+
+[EVENTS.md](EVENTS.md) gives a runnable request, exact schema, product/S5 derivation, eight-source ledger, shared-infrastructure disclosure and reproducible checks. The new module/console CLI adds stdin, strict duplicate-key rejection, an input byte cap and atomic output. Older entrypoints and browser pages remain intact.
+
+All 30 native tests (14 prior plus 16 new) and thirteen Node/Chrome tests pass locally. The complete native, independent relation-row checker and browser engines agree on 648 reports/2,552 candidates/5,984 relation obligations/9,208 before-after subformula sets; 1,072 altered noninput primitive leaves are rejected. An actual optional pyModelChecking 1.3.4 ordinary-CTL translation independently reconstructs products and checks 1,944 snapshots/13,812 sets/8,961 library calls. Chrome exercises all twelve controls at three widths, every candidate/relation/modal selection and twelve trusted completed downloads replayed natively. Fresh installed wheels retain both prior eight-control families and add twelve event controls through two entrypoints, eleven installed module origins and 24 forged atomic CLI checks plus 24 direct forgeries.
+
+One to four worlds, one to three informational events, one to three S5 agents and at most twelve pairs. Facts do not change. This scope does not represent a fully unnoticed secret where outsiders falsely exclude the actual event: that needs a different directed event relation. No factual postconditions, probabilities, belief revision, action composition, dynamic operators, planning, human/LLM knowledge inference, novelty or scalability claim. Local success is not a substitute for checking the exact public source and deployment.

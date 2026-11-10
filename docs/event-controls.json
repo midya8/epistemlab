@@ -1,0 +1,1412 @@
+[
+  {
+    "title": "A read may have been skipped",
+    "note": "The receiver learns p; the observer still considers an idle event possible, so does not know the receiver learned whether p.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "idle",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "not",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          "idle": [
+            "true"
+          ],
+          "true_read": [
+            "atom",
+            "p"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "idle"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "idle",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "true_read"
+      }
+    }
+  },
+  {
+    "title": "An observed read",
+    "note": "Without idle, the observer knows the receiver learned whether p, but still does not know p.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "not",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          "true_read": [
+            "atom",
+            "p"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "true_read"
+      }
+    }
+  },
+  {
+    "title": "A public announcement as one event",
+    "note": "One event with every agent self-related reproduces truthful public restriction, up to pair names.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "say"
+        ],
+        "preconditions": {
+          "say": [
+            "atom",
+            "p"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "say"
+            ]
+          ],
+          "b": [
+            [
+              "say"
+            ]
+          ]
+        },
+        "actual": "say"
+      }
+    }
+  },
+  {
+    "title": "The designated event cannot occur",
+    "note": "Other product pairs exist, but the focus/actual-event pair is absent. Post-event focus queries are null, not false or vacuous.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "idle",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "not",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          "idle": [
+            "true"
+          ],
+          "true_read": [
+            "atom",
+            "p"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "idle"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "idle",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "false_read"
+      }
+    }
+  },
+  {
+    "title": "No product pair survives",
+    "note": "The global product is empty. There is no pointed post-state.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "idle",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "false"
+          ],
+          "idle": [
+            "false"
+          ],
+          "true_read": [
+            "false"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "idle"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "idle",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "true_read"
+      }
+    }
+  },
+  {
+    "title": "Event uncertainty without new facts",
+    "note": "All events are always enabled. Event distinctions alone do not reveal the initially unknown atom.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "idle",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "true"
+          ],
+          "idle": [
+            "true"
+          ],
+          "true_read": [
+            "true"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "idle"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "idle",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "true_read"
+      }
+    }
+  },
+  {
+    "title": "True before, false after this event",
+    "note": "Preconditions are evaluated in the original model. The truthful epistemic content need not remain true in the product.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "tell"
+        ],
+        "preconditions": {
+          "tell": [
+            "and",
+            [
+              "atom",
+              "p"
+            ],
+            [
+              "not",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ]
+            ]
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "tell"
+            ]
+          ],
+          "b": [
+            [
+              "tell"
+            ]
+          ]
+        },
+        "actual": "tell"
+      }
+    }
+  },
+  {
+    "title": "Equal preconditions do not merge events",
+    "note": "Two enabled event copies remain distinct even with the same factual valuation and precondition.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "left",
+          "right"
+        ],
+        "preconditions": {
+          "left": [
+            "atom",
+            "p"
+          ],
+          "right": [
+            "atom",
+            "p"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "left"
+            ],
+            [
+              "right"
+            ]
+          ],
+          "b": [
+            [
+              "left",
+              "right"
+            ]
+          ]
+        },
+        "actual": "left"
+      }
+    }
+  },
+  {
+    "title": "World knowledge rules out an event",
+    "note": "The observer's event partition alone permits both reads, but world knowledge and preconditions leave just the actual one.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ]
+          ],
+          "b": [
+            [
+              "w0"
+            ],
+            [
+              "w1"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "not",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          "true_read": [
+            "atom",
+            "p"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "true_read"
+      }
+    }
+  },
+  {
+    "title": "Pooling is not a message",
+    "note": "Distributed knowledge uses relation intersection; it does not turn the event into public communication.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1",
+          "w2",
+          "w3"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": [],
+          "w2": [],
+          "w3": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1"
+            ],
+            [
+              "w2",
+              "w3"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w2"
+            ],
+            [
+              "w1",
+              "w3"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "D",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "E",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "idle",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "not",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          "idle": [
+            "true"
+          ],
+          "true_read": [
+            "atom",
+            "p"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "idle"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "idle",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "true_read"
+      }
+    }
+  },
+  {
+    "title": "Twelve product worlds",
+    "note": "Four worlds times three always-enabled events attain the product bound; every relation obligation is still explicit.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0",
+          "w1",
+          "w2",
+          "w3"
+        ],
+        "atoms": [
+          "p"
+        ],
+        "valuation": {
+          "w0": [
+            "p"
+          ],
+          "w1": [],
+          "w2": [],
+          "w3": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0",
+              "w1",
+              "w2",
+              "w3"
+            ]
+          ],
+          "b": [
+            [
+              "w0",
+              "w1",
+              "w2",
+              "w3"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "b",
+            [
+              "or",
+              [
+                "K",
+                "a",
+                [
+                  "atom",
+                  "p"
+                ]
+              ],
+              [
+                "K",
+                "a",
+                [
+                  "not",
+                  [
+                    "atom",
+                    "p"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "C",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "false_read",
+          "idle",
+          "true_read"
+        ],
+        "preconditions": {
+          "false_read": [
+            "true"
+          ],
+          "idle": [
+            "true"
+          ],
+          "true_read": [
+            "true"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "false_read"
+            ],
+            [
+              "idle"
+            ],
+            [
+              "true_read"
+            ]
+          ],
+          "b": [
+            [
+              "false_read",
+              "idle",
+              "true_read"
+            ]
+          ]
+        },
+        "actual": "true_read"
+      }
+    }
+  },
+  {
+    "title": "No supplied atoms",
+    "note": "A valid one-world informational event needs no propositional atom.",
+    "request": {
+      "model": {
+        "worlds": [
+          "w0"
+        ],
+        "atoms": [],
+        "valuation": {
+          "w0": []
+        },
+        "partitions": {
+          "a": [
+            [
+              "w0"
+            ]
+          ]
+        },
+        "focus": "w0",
+        "queries": [
+          [
+            "K",
+            "a",
+            [
+              "true"
+            ]
+          ],
+          [
+            "C",
+            [
+              "a"
+            ],
+            [
+              "false"
+            ]
+          ]
+        ],
+        "announcements": []
+      },
+      "action": {
+        "events": [
+          "tick"
+        ],
+        "preconditions": {
+          "tick": [
+            "true"
+          ]
+        },
+        "partitions": {
+          "a": [
+            [
+              "tick"
+            ]
+          ]
+        },
+        "actual": "tick"
+      }
+    }
+  }
+]
