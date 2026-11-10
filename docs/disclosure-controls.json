@@ -1,0 +1,662 @@
+[
+  {
+    "title": "Maximal is not maximum retained",
+    "request": {
+      "worlds": [
+        "w0",
+        "w1",
+        "w2",
+        "w3"
+      ],
+      "atoms": [
+        "p",
+        "q",
+        "r"
+      ],
+      "valuation": {
+        "w0": [
+          "p",
+          "q"
+        ],
+        "w1": [
+          "p"
+        ],
+        "w2": [
+          "q"
+        ],
+        "w3": [
+          "q",
+          "r"
+        ]
+      },
+      "partitions": {
+        "a": [
+          [
+            "w0",
+            "w1",
+            "w2",
+            "w3"
+          ]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        [
+          "or",
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "q"
+            ]
+          ]
+        ],
+        [
+          "not",
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "title": "A successful restriction is not a Boolean announcement",
+    "request": {
+      "worlds": [
+        "w0",
+        "w1",
+        "w2",
+        "w3"
+      ],
+      "atoms": [
+        "p"
+      ],
+      "valuation": {
+        "w0": [
+          "p"
+        ],
+        "w1": [
+          "p"
+        ],
+        "w2": [],
+        "w3": []
+      },
+      "partitions": {
+        "a": [
+          [
+            "w0",
+            "w2"
+          ],
+          [
+            "w1",
+            "w3"
+          ]
+        ],
+        "b": [
+          [
+            "w0",
+            "w3"
+          ],
+          [
+            "w1",
+            "w2"
+          ]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        [
+          "and",
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ],
+          [
+            "not",
+            [
+              "K",
+              "b",
+              [
+                "atom",
+                "p"
+              ]
+            ]
+          ]
+        ],
+        [
+          "K",
+          "a",
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "not",
+          [
+            "K",
+            "b",
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "title": "More disclosure can destroy ignorance",
+    "request": {
+      "worlds": [
+        "w0",
+        "w1"
+      ],
+      "atoms": [
+        "p"
+      ],
+      "valuation": {
+        "w0": [
+          "p"
+        ],
+        "w1": []
+      },
+      "partitions": {
+        "a": [
+          [
+            "w0",
+            "w1"
+          ]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        [
+          "not",
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ],
+        [
+          "K",
+          "a",
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "and",
+          [
+            "atom",
+            "p"
+          ],
+          [
+            "not",
+            [
+              "K",
+              "a",
+              [
+                "atom",
+                "p"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "title": "Common knowledge needs a chain",
+    "request": {
+      "worlds": [
+        "w0",
+        "w1",
+        "w2"
+      ],
+      "atoms": [
+        "p"
+      ],
+      "valuation": {
+        "w0": [
+          "p"
+        ],
+        "w1": [
+          "p"
+        ],
+        "w2": []
+      },
+      "partitions": {
+        "a": [
+          [
+            "w0",
+            "w1"
+          ],
+          [
+            "w2"
+          ]
+        ],
+        "b": [
+          [
+            "w0"
+          ],
+          [
+            "w1",
+            "w2"
+          ]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        [
+          "E",
+          [
+            "a",
+            "b"
+          ],
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "C",
+          [
+            "a",
+            "b"
+          ],
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "E",
+          [
+            "a",
+            "b"
+          ],
+          [
+            "E",
+            [
+              "a",
+              "b"
+            ],
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "title": "Distributed knowledge is a different goal",
+    "request": {
+      "worlds": [
+        "w0",
+        "w1",
+        "w2",
+        "w3"
+      ],
+      "atoms": [
+        "p"
+      ],
+      "valuation": {
+        "w0": [
+          "p"
+        ],
+        "w1": [],
+        "w2": [],
+        "w3": []
+      },
+      "partitions": {
+        "a": [
+          [
+            "w0",
+            "w1"
+          ],
+          [
+            "w2",
+            "w3"
+          ]
+        ],
+        "b": [
+          [
+            "w0",
+            "w2"
+          ],
+          [
+            "w1",
+            "w3"
+          ]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        [
+          "D",
+          [
+            "a",
+            "b"
+          ],
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "K",
+          "a",
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "K",
+          "b",
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "C",
+          [
+            "a",
+            "b"
+          ],
+          [
+            "atom",
+            "p"
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "title": "Three observers: every one-shot restriction",
+    "request": {
+      "worlds": [
+        "w00",
+        "w01",
+        "w02",
+        "w03",
+        "w04",
+        "w05",
+        "w06",
+        "w07"
+      ],
+      "atoms": [
+        "p",
+        "q",
+        "r"
+      ],
+      "valuation": {
+        "w00": [],
+        "w01": [
+          "p"
+        ],
+        "w02": [
+          "q"
+        ],
+        "w03": [
+          "p",
+          "q"
+        ],
+        "w04": [
+          "r"
+        ],
+        "w05": [
+          "p",
+          "r"
+        ],
+        "w06": [
+          "q",
+          "r"
+        ],
+        "w07": [
+          "p",
+          "q",
+          "r"
+        ]
+      },
+      "partitions": {
+        "a": [
+          [
+            "w00",
+            "w01"
+          ],
+          [
+            "w02",
+            "w03"
+          ],
+          [
+            "w04",
+            "w05"
+          ],
+          [
+            "w06",
+            "w07"
+          ]
+        ],
+        "b": [
+          [
+            "w00",
+            "w02"
+          ],
+          [
+            "w01",
+            "w03"
+          ],
+          [
+            "w04",
+            "w06"
+          ],
+          [
+            "w05",
+            "w07"
+          ]
+        ],
+        "c": [
+          [
+            "w00",
+            "w04"
+          ],
+          [
+            "w01",
+            "w05"
+          ],
+          [
+            "w02",
+            "w06"
+          ],
+          [
+            "w03",
+            "w07"
+          ]
+        ]
+      },
+      "focus": "w07",
+      "queries": [
+        [
+          "K",
+          "a",
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "K",
+          "b",
+          [
+            "atom",
+            "q"
+          ]
+        ],
+        [
+          "K",
+          "c",
+          [
+            "atom",
+            "r"
+          ]
+        ],
+        [
+          "C",
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "or",
+            [
+              "atom",
+              "p"
+            ],
+            [
+              "or",
+              [
+                "atom",
+                "q"
+              ],
+              [
+                "atom",
+                "r"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "title": "No atoms: only falsehood or tautology",
+    "request": {
+      "worlds": [
+        "w0",
+        "w1"
+      ],
+      "atoms": [],
+      "valuation": {
+        "w0": [],
+        "w1": []
+      },
+      "partitions": {
+        "a": [
+          [
+            "w0",
+            "w1"
+          ]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        [
+          "true"
+        ],
+        [
+          "false"
+        ],
+        [
+          "not",
+          [
+            "K",
+            "a",
+            [
+              "false"
+            ]
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "title": "A false fact cannot be made true by truthful restriction",
+    "request": {
+      "worlds": [
+        "w0",
+        "w1"
+      ],
+      "atoms": [
+        "p"
+      ],
+      "valuation": {
+        "w0": [],
+        "w1": [
+          "p"
+        ]
+      },
+      "partitions": {
+        "a": [
+          [
+            "w0",
+            "w1"
+          ]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        [
+          "atom",
+          "p"
+        ],
+        [
+          "K",
+          "a",
+          [
+            "atom",
+            "p"
+          ]
+        ],
+        [
+          "not",
+          [
+            "K",
+            "a",
+            [
+              "atom",
+              "p"
+            ]
+          ]
+        ]
+      ],
+      "announcements": []
+    }
+  }
+]
