@@ -1,0 +1,96 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.updates {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 48px;
+}
+.updates article {
+  padding: 20px;
+}
+.round-section {
+  margin: 24px 0 60px;
+}
+.worlds,
+.queries,
+.paths {
+  display: grid;
+  gap: 12px;
+}
+.worlds article,
+.queries article,
+.paths article {
+  padding: 16px;
+}
+.worlds article[data-focus="true"] {
+  border: 2px solid var(--accent);
+}
+#partitions article {
+  margin-bottom: 12px;
+  padding: 16px;
+}
+.queries {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 35px;
+}
+.formula-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.paths {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.counterexample {
+  margin: 24px 0;
+}
+.counterexample article {
+  padding: 22px;
+  border-left: 4px solid #b63821;
+  background: #fff6f2;
+}
+.counterexample:empty {
+  display: none;
+}
+.obligations {
+  margin-bottom: 50px;
+}
+.round-section h3 {
+  margin-top: 32px;
+}
+.pill {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.formula {
+  font-family: ui-monospace, monospace;
+  overflow-wrap: anywhere;
+}
+.truth {
+  font-weight: 700;
+  color: var(--accent);
+}
+.false {
+  color: #b63821;
+}
+.updates h3 {
+  font-size: 1.1rem;
+}
+.updates p {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 740px) {
+  .updates,
+  .queries,
+  .paths {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "worlds": ["w0", "w1"],
+  "atoms": ["p"],
+  "valuation": {
+    "w0": ["p"],
+    "w1": []
+  },
+  "partitions": {
+    "a": [["w0", "w1"]],
+    "b": [["w0"], ["w1"]]
+  },
+  "focus": "w0",
+  "queries": [
+    ["and", ["atom", "p"], ["not", ["K", "a", ["atom", "p"]]]],
+    ["K", "a", ["atom", "p"]],
+    ["C", ["a", "b"], ["atom", "p"]]
+  ],
+  "announcements": [["and", ["atom", "p"], ["not", ["K", "a", ["atom", "p"]]]]]
+}

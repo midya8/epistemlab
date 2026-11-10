@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "epistemlab"
+version = "0.1.0"
+description = "Finite multi-agent knowledge and public announcement evidence"
+requires-python = ">=3.10"
+license = "MIT"
+[project.scripts]
+epistemlab = "epistemlab.__main__:main"
+[tool.setuptools]
+packages = ["epistemlab"]
