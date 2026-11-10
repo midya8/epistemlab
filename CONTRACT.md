@@ -92,3 +92,7 @@ The finite bounds are part of the contract, not a performance claim. There is
 no learned reasoning, implicit-model discovery, model checking over arbitrary
 infinite structures, private communication, action models, belief revision or
 knowledge planning. All semantics and graph methods are established prior work.
+
+## Separate Boolean disclosure atlas
+
+This contract still describes the sequential-update workbench and `epistemlab-v1`. The optional bounded disclosure surface, `epistemlab-disclosures-v1`, has its own [DISCLOSURES.md](DISCLOSURES.md). It adds a complete finite Boolean-disclosure search without changing the original schema or claiming general epistemic planning.
