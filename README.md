@@ -5,7 +5,7 @@ True when said. False after heard.
 A dependency-free finite multi-agent knowledge workbench. Inspect every supplied
 world, every information partition, every subformula truth set and every public
 announcement restriction. A separate checker reconstructs the complete report.
-The browser runs the same experiments offline after the static assets load.
+The browser computes these experiments locally after the static assets load. No model, backend, or paid API is called.
 No model API, training, private data or inferred human knowledge.
 
 ## Contrasts that separate the claims
