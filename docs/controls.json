@@ -1,0 +1,255 @@
+[
+  {
+    "id": "moore",
+    "title": "A truthful announcement can refute itself",
+    "request": {
+      "worlds": ["w0", "w1"],
+      "atoms": ["p"],
+      "valuation": {
+        "w0": ["p"],
+        "w1": []
+      },
+      "partitions": {
+        "a": [["w0", "w1"]],
+        "b": [["w0"], ["w1"]]
+      },
+      "focus": "w0",
+      "queries": [
+        ["and", ["atom", "p"], ["not", ["K", "a", ["atom", "p"]]]],
+        ["K", "a", ["atom", "p"]],
+        ["C", ["a", "b"], ["atom", "p"]]
+      ],
+      "announcements": [
+        ["and", ["atom", "p"], ["not", ["K", "a", ["atom", "p"]]]]
+      ]
+    }
+  },
+  {
+    "id": "everybody",
+    "title": "Everybody knows. Common knowledge fails.",
+    "request": {
+      "worlds": ["w0", "w1", "w2"],
+      "atoms": ["p"],
+      "valuation": {
+        "w0": ["p"],
+        "w1": ["p"],
+        "w2": []
+      },
+      "partitions": {
+        "a": [["w0", "w1"], ["w2"]],
+        "b": [["w0"], ["w1", "w2"]]
+      },
+      "focus": "w0",
+      "queries": [
+        ["E", ["a", "b"], ["atom", "p"]],
+        ["C", ["a", "b"], ["atom", "p"]],
+        ["E", ["a", "b"], ["E", ["a", "b"], ["atom", "p"]]]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "id": "distributed",
+    "title": "Pooled information is not a message",
+    "request": {
+      "worlds": ["w0", "w1", "w2", "w3"],
+      "atoms": ["p"],
+      "valuation": {
+        "w0": ["p"],
+        "w1": [],
+        "w2": [],
+        "w3": []
+      },
+      "partitions": {
+        "a": [
+          ["w0", "w1"],
+          ["w2", "w3"]
+        ],
+        "b": [
+          ["w0", "w2"],
+          ["w1", "w3"]
+        ]
+      },
+      "focus": "w0",
+      "queries": [
+        ["D", ["a", "b"], ["atom", "p"]],
+        ["K", "a", ["atom", "p"]],
+        ["K", "b", ["atom", "p"]],
+        ["C", ["a", "b"], ["atom", "p"]]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "id": "atomic",
+    "title": "Announcing a fact makes that fact common",
+    "request": {
+      "worlds": ["w0", "w1", "w2"],
+      "atoms": ["p"],
+      "valuation": {
+        "w0": ["p"],
+        "w1": [],
+        "w2": ["p"]
+      },
+      "partitions": {
+        "a": [["w0", "w1", "w2"]],
+        "b": [["w0", "w1"], ["w2"]]
+      },
+      "focus": "w0",
+      "queries": [
+        ["atom", "p"],
+        ["E", ["a", "b"], ["atom", "p"]],
+        ["C", ["a", "b"], ["atom", "p"]]
+      ],
+      "announcements": [["atom", "p"]]
+    }
+  },
+  {
+    "id": "repeat",
+    "title": "Repeating an unsuccessful formula empties the model",
+    "request": {
+      "worlds": ["w0", "w1"],
+      "atoms": ["p"],
+      "valuation": {
+        "w0": ["p"],
+        "w1": []
+      },
+      "partitions": {
+        "a": [["w0", "w1"]],
+        "b": [["w0"], ["w1"]]
+      },
+      "focus": "w0",
+      "queries": [
+        ["and", ["atom", "p"], ["not", ["K", "a", ["atom", "p"]]]],
+        ["atom", "p"],
+        ["K", "a", ["atom", "p"]]
+      ],
+      "announcements": [
+        ["and", ["atom", "p"], ["not", ["K", "a", ["atom", "p"]]]],
+        ["and", ["atom", "p"], ["not", ["K", "a", ["atom", "p"]]]],
+        ["atom", "p"]
+      ]
+    }
+  },
+  {
+    "id": "eliminated",
+    "title": "A false-at-focus announcement removes the focus",
+    "request": {
+      "worlds": ["w0", "w1"],
+      "atoms": ["p"],
+      "valuation": {
+        "w0": [],
+        "w1": ["p"]
+      },
+      "partitions": {
+        "a": [["w0", "w1"]],
+        "b": [["w0", "w1"]]
+      },
+      "focus": "w0",
+      "queries": [
+        ["atom", "p"],
+        ["K", "a", ["atom", "p"]],
+        ["C", ["a", "b"], ["atom", "p"]]
+      ],
+      "announcements": [["atom", "p"]]
+    }
+  },
+  {
+    "id": "disconnected",
+    "title": "Common knowledge is component-local",
+    "request": {
+      "worlds": ["w0", "w1", "w2", "w3"],
+      "atoms": ["p"],
+      "valuation": {
+        "w0": ["p"],
+        "w1": ["p"],
+        "w2": [],
+        "w3": []
+      },
+      "partitions": {
+        "a": [
+          ["w0", "w1"],
+          ["w2", "w3"]
+        ],
+        "b": [["w0"], ["w1"], ["w2", "w3"]]
+      },
+      "focus": "w0",
+      "queries": [
+        ["C", ["a", "b"], ["atom", "p"]],
+        ["C", ["a", "b"], ["not", ["atom", "p"]]],
+        ["D", ["a", "b"], ["atom", "p"]]
+      ],
+      "announcements": []
+    }
+  },
+  {
+    "id": "muddy",
+    "title": "Three supplied observers, repeated ignorance",
+    "request": {
+      "worlds": ["w00", "w01", "w02", "w03", "w04", "w05", "w06", "w07"],
+      "atoms": ["p", "q", "r"],
+      "valuation": {
+        "w00": [],
+        "w01": ["p"],
+        "w02": ["q"],
+        "w03": ["p", "q"],
+        "w04": ["r"],
+        "w05": ["p", "r"],
+        "w06": ["q", "r"],
+        "w07": ["p", "q", "r"]
+      },
+      "partitions": {
+        "a": [
+          ["w00", "w01"],
+          ["w02", "w03"],
+          ["w04", "w05"],
+          ["w06", "w07"]
+        ],
+        "b": [
+          ["w00", "w02"],
+          ["w01", "w03"],
+          ["w04", "w06"],
+          ["w05", "w07"]
+        ],
+        "c": [
+          ["w00", "w04"],
+          ["w01", "w05"],
+          ["w02", "w06"],
+          ["w03", "w07"]
+        ]
+      },
+      "focus": "w07",
+      "queries": [
+        ["K", "a", ["atom", "p"]],
+        ["K", "b", ["atom", "q"]],
+        ["K", "c", ["atom", "r"]],
+        [
+          "C",
+          ["a", "b", "c"],
+          ["or", ["atom", "p"], ["or", ["atom", "q"], ["atom", "r"]]]
+        ]
+      ],
+      "announcements": [
+        ["or", ["atom", "p"], ["or", ["atom", "q"], ["atom", "r"]]],
+        [
+          "and",
+          ["not", ["K", "a", ["atom", "p"]]],
+          [
+            "and",
+            ["not", ["K", "b", ["atom", "q"]]],
+            ["not", ["K", "c", ["atom", "r"]]]
+          ]
+        ],
+        [
+          "and",
+          ["not", ["K", "a", ["atom", "p"]]],
+          [
+            "and",
+            ["not", ["K", "b", ["atom", "q"]]],
+            ["not", ["K", "c", ["atom", "r"]]]
+          ]
+        ]
+      ]
+    }
+  }
+]
