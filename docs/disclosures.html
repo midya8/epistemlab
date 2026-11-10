@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EpistemLab - What can you actually announce?</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="epistem.css" />
+    <link rel="stylesheet" href="disclosures.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <a href="./">EpistemLab</a>
+        <nav>
+          <a href="./">Sequential updates</a> ·
+          <a href="https://github.com/midya8/epistemlab">Source</a>
+        </nav>
+      </header>
+      <section class="hero">
+        <p class="eyebrow">
+          BOUNDED BOOLEAN DISCLOSURES / EVERY RETAINED SUBSET
+        </p>
+        <h1>A restriction is not<br />an announcement.</h1>
+        <p class="lead">
+          Two worlds with the same atomic facts cannot be separated by any
+          Boolean announcement. Inspect every possible restriction, find the
+          actual disclosures that meet a knowledge goal, and see when saying
+          more destroys it.
+        </p>
+        <div class="pills">
+          <span>Complete 256-mask bound</span><span>Actual defining cubes</span
+          ><span>Maximal is not maximum</span>
+        </div>
+      </section>
+      <section class="two">
+        <div>
+          <label for="control">Choose a controlled experiment</label
+          ><select id="control"></select>
+          <p id="experiment-title" class="caption"></p>
+          <details>
+            <summary>Edit the supplied model and goal queries</summary>
+            <p>
+              At most eight worlds. Announcements must be empty: this atlas
+              starts at the supplied original model.
+            </p>
+            <textarea
+              id="request"
+              rows="18"
+              spellcheck="false"
+              aria-label="Supplied disclosure model"
+            ></textarea>
+          </details>
+          <button id="run">Enumerate all restrictions</button
+          ><button id="download" class="secondary" disabled>
+            Download complete atlas
+          </button>
+          <p id="status" role="status"></p>
+        </div>
+        <aside>
+          <p class="eyebrow">ATOMIC VOCABULARY IS PART OF THE CLAIM</p>
+          <h2>Same facts.<br />Different possibilities.</h2>
+          <p>
+            Every Boolean formula over the supplied atoms is constant within a
+            valuation class. A restriction that splits a class is only a
+            diagnostic what-if, not a Boolean announcement. This is not a claim
+            that it is expressible by an epistemic formula either.
+          </p>
+          <p>
+            Goals are evaluated after restriction, not before. Inclusion-maximal
+            success means no successful Boolean disclosure retains a strict
+            superset. Maximum-retained success keeps the largest number of
+            supplied worlds. Neither measures formula size or real information
+            leakage.
+          </p>
+        </aside>
+      </section>
+      <section id="output" hidden>
+        <p class="eyebrow">COMPLETE SEARCH / NO MONOTONICITY ASSUMPTION</p>
+        <h2 id="headline"></h2>
+        <div id="stats" class="stats"></div>
+        <h3>Atomic valuation classes</h3>
+        <div id="classes" class="cards"></div>
+        <label for="goal">Inspect one supplied goal at the original focus</label
+        ><select id="goal"></select>
+        <p id="goal-summary"></p>
+        <h3>Every inclusion-maximal successful Boolean disclosure</h3>
+        <div id="maximal" class="buttons"></div>
+        <h3>Every maximum-retained successful Boolean disclosure</h3>
+        <div id="maximum" class="buttons"></div>
+        <div id="nonmonotone" class="warning"></div>
+        <div id="gap" class="warning"></div>
+        <h3>Every retained-world subset</h3>
+        <p>
+          Green: truthful Boolean success for this goal. Pale: another Boolean
+          restriction. Dashed: not Boolean-definable. A crossed-out focus has
+          null pointed values, never a false goal verdict.
+        </p>
+        <div id="masks" class="mask-grid"></div>
+        <h2 id="selected-title"></h2>
+        <div id="toggles" class="buttons"></div>
+        <p id="selected-verdict" class="warning"></p>
+        <div id="definition" class="model-card"></div>
+        <div class="two">
+          <div>
+            <h3>Every supplied query after this restriction</h3>
+            <div id="query-values" class="cards"></div>
+          </div>
+          <div>
+            <h3>Every query's complete truth set</h3>
+            <div id="query-sets" class="cards"></div>
+          </div>
+        </div>
+        <h3>Inspect the actual restricted knowledge model</h3>
+        <p id="detail-note"></p>
+        <div id="partitions" class="cards"></div>
+        <div class="two">
+          <div>
+            <label for="detail-formula"
+              >Every distinct supplied subformula</label
+            ><select id="detail-formula"></select>
+          </div>
+          <div>
+            <label for="detail-world"
+              >Inspect a remaining world, not an eliminated focus</label
+            ><select id="detail-world"></select>
+          </div>
+        </div>
+        <p id="detail-truth"></p>
+        <p id="detail-possible"></p>
+        <div id="paths" class="cards"></div>
+        <div id="failure" class="warning"></div>
+      </section>
+      <section class="method">
+        <h3>Two reconstructions, disclosed boundaries</h3>
+        <p>
+          The atlas generator enumerates bit masks and calls pointwise knowledge
+          semantics. The separate checker enumerates combinations and unions of
+          valuation classes, then uses truth-set/fixed-point knowledge semantics
+          for every restriction. It checks every record, defining cube,
+          obstruction pair, goal frontier and stronger-disclosure failure
+          witness. Shared strict model validation is disclosed. Downloaded JSON
+          is independently checked only after
+          <code>epistemlab verify-disclosures</code> accepts it.
+        </p>
+      </section>
+      <footer>
+        <p class="eyebrow">SUPPLIED FINITE MODELS, NOT PEOPLE</p>
+        <h2>Enough to meet a goal.<br />Not a privacy score.</h2>
+        <p>
+          One to eight supplied worlds, at most five atoms, three S5 agents, six
+          goals, and no prior announcements. Empty restrictions are diagnostics
+          without a pointed state. Canonical DNF cube lists define the retained
+          set relative to this supplied model, not a globally shortest formula.
+          Counting worlds is not counting probabilities or measuring actual
+          disclosure risk. No speaker-knowledge requirement, private action,
+          general planning, arbitrary-announcement logic or new-algorithm claim.
+        </p>
+        <p>
+          <a
+            href="https://github.com/midya8/epistemlab/blob/main/DISCLOSURES.md"
+            >Exact disclosure contract</a
+          >
+          ·
+          <a href="https://github.com/midya8/epistemlab/blob/main/SOURCES.md"
+            >Prior-work ledger</a
+          >
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="disclosures.js"></script>
+  </body>
+</html>
