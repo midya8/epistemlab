@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EpistemLab - a truthful announcement can refute itself</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="epistem.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <strong>EpistemLab</strong
+        ><a href="https://github.com/midya8/epistemlab">Source</a>
+      </nav>
+      <header>
+        <p class="eyebrow">
+          FINITE MULTI-AGENT KNOWLEDGE / EVERY WORLD AND UPDATE
+        </p>
+        <h1>True when said.<br />False after heard.</h1>
+        <p class="intro">
+          "The fact is true, but you don't know it." A public announcement can
+          be truthful and still make its own content false. Inspect the worlds
+          that disappear and the knowledge that changes.
+        </p>
+        <div class="tags">
+          <span>Explicit S5 partitions</span
+          ><span>Actual counterexample paths</span
+          ><span>Empty is not false</span>
+        </div>
+      </header>
+      <section class="setup">
+        <div>
+          <label for="control">Choose a controlled experiment</label
+          ><select id="control"></select>
+          <p id="experiment-title" class="experiment-title"></p>
+          <details>
+            <summary>Edit the supplied model and formula queries</summary>
+            <label for="request"
+              >Original model, focus, queries and announcements</label
+            ><textarea id="request" rows="15" spellcheck="false"></textarea>
+          </details>
+          <div class="buttons">
+            <button id="build">Inspect knowledge and updates</button
+            ><button id="download" disabled>Download complete evidence</button>
+          </div>
+          <p id="status" role="status"></p>
+        </div>
+        <aside>
+          <p class="eyebrow">INFORMATION, NOT MIND READING</p>
+          <h2>One model.<br />Different kinds of knowing.</h2>
+          <p>
+            Each agent's partition says which supplied worlds that agent cannot
+            distinguish. Everybody's knowledge uses the union of those
+            relations. Distributed knowledge uses their intersection. Common
+            knowledge follows every finite chain through the group's relations.
+          </p>
+          <p>
+            Pooled information is not an actual message. These are supplied
+            mathematical models, not learned human knowledge, predictions or a
+            theory of what real people can compute.
+          </p>
+        </aside>
+      </section>
+      <section id="output" hidden>
+        <p class="eyebrow">COMPLETE BEFORE-AND-AFTER RECORD</p>
+        <h2 id="headline"></h2>
+        <div id="stats" class="stats"></div>
+        <div id="updates" class="updates"></div>
+        <section class="round-section">
+          <h2>Inspect any announcement round</h2>
+          <label for="round">Current restricted model</label
+          ><select id="round"></select>
+          <p id="focus-status" class="warning"></p>
+          <div class="two">
+            <section>
+              <h3>Every remaining world</h3>
+              <div id="worlds" class="worlds"></div>
+            </section>
+            <section>
+              <h3>Every agent's remaining information blocks</h3>
+              <div id="partitions"></div>
+            </section>
+          </div>
+          <h3>All supplied queries at the focus</h3>
+          <div id="queries" class="queries"></div>
+        </section>
+        <section class="obligations">
+          <p class="eyebrow">TRUTH IS EVALUATED IN THIS ROUND'S MODEL</p>
+          <h2>Follow the actual obligations.</h2>
+          <div class="two">
+            <div>
+              <label for="formula">Every distinct supplied subformula</label
+              ><select id="formula"></select>
+            </div>
+            <div>
+              <label for="world">Inspect from a remaining world</label
+              ><select id="world"></select>
+            </div>
+          </div>
+          <p id="formula-label" class="formula-label"></p>
+          <p id="truth-set"></p>
+          <p id="formula-verdict" class="warning"></p>
+          <p id="possibility-help"></p>
+          <div id="paths" class="paths"></div>
+          <div id="counterexample" class="counterexample"></div>
+          <p class="warning">
+            A counterexample to common knowledge can require several agents'
+            links. A distributed-knowledge edge must satisfy every agent's
+            relation simultaneously. A formula's truth set is recomputed after
+            every update, including the formula that was announced.
+          </p>
+        </section>
+        <section class="audit">
+          <h2>Two ways to reconstruct the same finite evidence</h2>
+          <p>
+            Python evaluates formulas pointwise and uses breadth-first
+            relational paths. A separate checker uses truth-set algebra,
+            partition-block membership, greatest fixed points for common
+            knowledge, and Floyd-Warshall paths. It reconstructs every round,
+            every subformula truth set, every modal obligation and every
+            lost-truth announcement witness without importing the analyzer.
+          </p>
+          <p>
+            Shared strict input validation is disclosed. JavaScript is a
+            matching implementation, not the independent checker. Downloaded
+            evidence is independently checked only after
+            <code>epistemlab verify evidence.json</code> accepts the entire
+            report.
+          </p>
+        </section>
+      </section>
+      <footer>
+        <p class="eyebrow">THE BOUND IS PART OF THE CLAIM</p>
+        <h2>Supplied worlds.<br />Not inferred minds.</h2>
+        <p>
+          One to sixteen explicit worlds, one to three agents, up to five atoms,
+          six queries and four sequential public updates. Formulas have depth at
+          most six and at most 128 total supplied syntax nodes. Every agent
+          starts with a complete S5 equivalence partition. No private
+          announcements, probability, belief revision, event models, planning or
+          strategic reasoning.
+        </p>
+        <p>
+          An update keeps exactly the worlds where its content was true before
+          the announcement. A removed focus is marked eliminated, with null
+          query values, never false or vacuously known. An empty update is a
+          diagnostic with no pointed state, not a claim that an impossible
+          announcement happened at the focus. Reported lost truth is
+          model-specific, not a proof that a formula is unsuccessful in every
+          model.
+        </p>
+        <p>
+          This is established epistemic and public-announcement logic, not a new
+          algorithm or empirical study. See the
+          <a href="https://github.com/midya8/epistemlab/blob/main/CONTRACT.md"
+            >exact contract</a
+          >
+          and
+          <a href="https://github.com/midya8/epistemlab/blob/main/SOURCES.md"
+            >source ledger</a
+          >.
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
