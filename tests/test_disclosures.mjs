@@ -48,3 +48,23 @@ test("strict disclosure limits, nonempty prior-update anchors and malformed sche
   r.partitions = { a: [r.worlds] };
   assert.throws(() => atlas(r));
 });
+
+test("all-proper-superset maximality survives a two-bit nonmonotone gap", () => {
+  const p = ["atom", "p"],
+    q = ["atom", "q"],
+    kp = ["K", "a", p],
+    kq = ["K", "a", q],
+    f = ["or", ["and", kp, kq], ["and", ["not", kp], ["not", kq]]];
+  const r = {
+    worlds: ["w0", "w1", "w2"],
+    atoms: ["p", "q"],
+    valuation: { w0: ["p", "q"], w1: ["p"], w2: ["q"] },
+    partitions: { a: [["w0", "w1", "w2"]] },
+    focus: "w0",
+    queries: [f],
+    announcements: [],
+  };
+  const a = atlas(r);
+  assert.deepEqual(a.goals[0].successes, [1, 7]);
+  assert.deepEqual(a.goals[0].maximal, [7]);
+});
