@@ -1,12 +1,22 @@
 # EpistemLab
 
-True when said. False after heard.
-
 A dependency-free finite multi-agent knowledge workbench. Inspect every supplied
 world, every information partition, every subformula truth set and every public
 announcement restriction. A separate checker reconstructs the complete report.
 The browser computes these experiments locally after the static assets load. No model, backend, or paid API is called.
-No model API, training, private data or inferred human knowledge.
+No training, private data or inferred human knowledge.
+
+## Choose an update
+
+| Question | Entry point | Scope |
+| --- | --- | --- |
+| What changes after a supplied public announcement? | `analyze`, `verify`, `docs/index.html` | Sequential restrictions and every subformula truth set |
+| Which Boolean announcements meet a goal? | `disclosures`, `verify-disclosures`, `docs/disclosures.html` | Bounded complete restriction atlas, definability and retained-world frontiers |
+| Who can distinguish which informational event occurred? | `epistemlab.event_cli`, `docs/events.html` | S5 product updates, event/world candidates and modal relations |
+
+Each tool works on the supplied model. It does not infer what real people know.
+Public restriction and uncertain-event product update are different operations;
+a truthful announcement need not remain true after its own update.
 
 ## Boolean disclosure atlas
 
@@ -22,7 +32,7 @@ epistemlab disclosures disclosure-request.json > atlas.json
 epistemlab verify-disclosures atlas.json
 ```
 
-## Contrasts that separate the claims
+## Public-announcement controls
 
 - `p AND NOT K[a]p` is true at the focus before it is publicly announced. The
   announcement leaves one world. Agent a then knows p, so the content just
@@ -62,7 +72,7 @@ Open the local server in a browser. Edit the complete supplied model, choose any
 announcement round and inspect every formula/world pair. Exported browser JSON
 is independently checked only when Python accepts the complete report.
 
-## Two reconstructions
+## Independent report checks
 
 The analyzer uses pointwise recursive semantics, explicit relation membership
 and breadth-first paths. The independent checker uses truth-set algebra,
@@ -100,7 +110,7 @@ Established epistemic/public-announcement logic and standard graph/fixed-point
 methods, not a new algorithm. See [CONTRACT.md](CONTRACT.md) and
 [SOURCES.md](SOURCES.md).
 
-Disclosure reproduction adds seven Python tests (14 total), four Node semantic tests and actual-Chrome atlas checks (nine Node/Chrome tests total). All 200 small models are complete atlases (1,600 restriction records), with all Boolean truth functions of one atom checked independently; 45 seeded nested-goal atlases; eight developed controls/324 masks; every defining cube, obstruction, frontier and non-monotone witness; and installed 0.2.0 wheel execution through both command entry points for both control families. Actual atlas Chrome checks 24 responsive reports, 972 mask selections, 75 goal selections, 204 frontier/witness buttons, 2,596 subformula selections, 1,170 modal obligations, 87 world toggles and eight exports. Existing sequential-update checks remain included.
+At v0.2, disclosure reproduction added seven Python tests (14 total), four Node semantic tests and actual-Chrome atlas checks (nine Node/Chrome tests total). All 200 small models are complete atlases (1,600 restriction records), with all Boolean truth functions of one atom checked independently; 45 seeded nested-goal atlases; eight developed controls/324 masks; every defining cube, obstruction, frontier and non-monotone witness; and installed 0.2.0 wheel execution through both command entry points for both control families. Actual atlas Chrome checks 24 responsive reports, 972 mask selections, 75 goal selections, 204 frontier/witness buttons, 2,596 subformula selections, 1,170 modal obligations, 87 world toggles and eight exports. Existing sequential-update checks remain included.
 
 ## S5 event-model product updates
 
